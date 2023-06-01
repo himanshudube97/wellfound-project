@@ -103,7 +103,7 @@ app.get("/deleteData", async (req, res, next) => {
     }
 })
 
-
-app.listen(process.env.PORT, () => {
-    console.log(`server listening on port ${process.env.PORT}`)
+let PORT= process.env.PORT || 4000;
+app.listen(PORT, () => {
+    console.log(`server listening on port ${PORT}`)
 })
