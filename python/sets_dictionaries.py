@@ -31,3 +31,36 @@ print(my_dict)
 
 for x in my_dict:
     print(f'The value {x} is {my_dict[x]}')
+
+
+
+""". Unpacking a Dictionary
+If you already have a dictionary:"""
+
+data = {"name": "Alice", "age": 30}
+
+def greet(name, age):
+    print(f"Hello {name}, age {age}")
+
+greet(**data)  # Unpacks name and age into the function arguments
+"""
+2. Unpacking a Pydantic Object or Class
+If you have a custom object (like a Pydantic model or class), you must first convert it to a dict-like form."""
+
+
+from pydantic import BaseModel
+
+class User(BaseModel):
+    name: str
+    age: int
+
+user = User(name="Bob", age=25)
+
+print(user.dict())   # {'name': 'Bob', 'age': 25}
+greet(**user.dict()) # Unpack and pass to function
+
+
+
+# data = {"names": "himanshu", "age": 50, "class": "eight"}
+# la = {"hello": "greet", "bro": "yes"}
+# print({**data, **la})
