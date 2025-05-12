@@ -6,6 +6,8 @@ from sqlalchemy.orm import relationship
 from pydantic import BaseModel, EmailStr, HttpUrl
 from typing import Optional, List
 from datetime import datetime
+from sqlalchemy.future import select
+from sqlalchemy.ext.asyncio import AsyncSession
 from contextlib import asynccontextmanager
 
 
@@ -133,6 +135,9 @@ async def health():
 # @app.post("/create_user")
 # async def create_user(user:UserModel):
 #     try:
-
+#         user_exists = select(User).filter(User.email == user.get("email"))
+#         if user_exists raise 
+#         result = await engine.execute(stmt)
 #     except:
+    
 
