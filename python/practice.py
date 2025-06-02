@@ -65,3 +65,10 @@ def take_input_and_calculate_and_print():
 take_input_and_calculate_and_print()
 
 
+
+## second Working something with dictionary. 
+
+details = {
+    "name": "Himanshu",
+    "age": 20
+}
